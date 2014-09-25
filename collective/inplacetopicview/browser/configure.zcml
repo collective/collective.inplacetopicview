@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="collective.inplacetopicview">
+  <interface
+      interface=".layer.IAcquisitionAwareLayer"
+      type="zope.publisher.interfaces.browser.IBrowserSkinType"
+      name="collective.inplacetopicview.browser.layer"
+      />
+  <browser:page
+    for="Products.ATContentTypes.interface.IATTopic"
+    name="inplace.acquisition.topic"
+    class=".acquisition.Topic"
+    template="acquisition.pt"
+    permission="zope2.View"
+  />
+  <browser:page
+    for="Products.ATContentTypes.interface.IATTopic"
+    name="inplace.twin.item"
+    class=".twin.Item"
+    permission="zope2.View"
+  />
+  <browser:page
+    for="Products.ATContentTypes.interface.IATTopic"
+    name="inplace.twin.topic"
+    class=".twin.Topic"
+    template="twin.pt"
+    permission="zope2.View"
+  />
+  <browser:viewlet
+    name="plone.path_bar"
+    manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+    class=".acquisition_bar.AcquisitionBarViewlet"
+    permission="zope2.View"
+    layer=".layer.IAcquisitionAwareLayer" />
+
+</configure>

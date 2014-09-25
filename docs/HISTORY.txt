@@ -1,0 +1,13 @@
+Changelog
+=========
+
+1.1 - Unreleased
+----------------
+- Plone 4.x compatiblity [dimboo]
+- Add breadcrumb acquisition aware [toutpt]
+- Add portlet manager renderer acquisition aware [toutpt]
+
+1.0 - 2010-01-28
+----------------
+
+- Initial release
